@@ -1,3 +1,31 @@
+export enum LocationEnum {
+  JRP = 'JRP',
+  JRPE = 'JRPE',
+  JHO = 'JHO',
+}
+
+export enum DirectionEnum {
+  BUILD = 'build',
+  REPAIR = 'repair',
+  MADE_TO_ORDER = 'made_to_order',
+}
+
+export enum CategoryEnum {
+  ELECTRIC = 'electric',
+  WATER_PIPE = 'water_pipe',
+  AC = 'ac',
+  INTERNET = 'internet',
+  CAR = 'car',
+  DORM = 'dorm',
+  MACHINE = 'machine',
+}
+
+export enum PriorityEnum {
+  NORMAL = 'normal',
+  URGENT = 'urgent',
+  PROJECT = 'project',
+}
+
 export class StatusDto {
   step: number;
   label: string;
@@ -5,12 +33,12 @@ export class StatusDto {
 }
 
 export class CreateRequestDto {
-  priority: 'normal' | 'urgent' | 'project';
+  priority: PriorityEnum;
   project_name?: string;
-  location: 'JRP' | 'JRPE' | 'อื่นๆ';
+  location: LocationEnum;
   date_request?: string;
-  direction: 'build' | 'repair' | 'made_to_order';
-  category: 'electric' | 'water_pipe' | 'AC' | 'internet' | 'car' | 'dorm' | 'machine';
+  direction: DirectionEnum;
+  category: CategoryEnum;
   topic: string;
   content: string;
   created_by: string;
