@@ -39,8 +39,11 @@ export class CreateRequestDto {
   date_request?: string;
   direction: DirectionEnum;
   category: CategoryEnum;
+  department: string;  // หน่วยงาน เช่น imd
+  read?: number;  // ค่าอ่าน เช่น 1, 2 (default: 0)
   topic: string;
   content: string;
+  estimated_days?: number;  // จำนวนวัน (ใช้เมื่อ direction = made_to_order)
   created_by: string;
 }
 
@@ -52,8 +55,11 @@ export class RequestDto {
   date_request: string;
   direction: string;
   category: string;
+  department: string;  // หน่วยงาน
+  read: number;  // ค่าอ่าน
   topic: string;
   content: string;
+  estimated_days?: number;  // จำนวนวัน
   status: StatusDto;
   created_by: string;
   created_at: Date;

@@ -17,8 +17,11 @@ export class RequestService {
       date_request: createRequestDto.date_request || this.getTodayDate(),
       direction: createRequestDto.direction,
       category: createRequestDto.category,
+      department: createRequestDto.department,
+      read: createRequestDto.read ?? 0,
       topic: createRequestDto.topic,
       content: createRequestDto.content,
+      estimated_days: createRequestDto.estimated_days,
       status: {
         step: 1,
         label: 'Awaiting Approval',
